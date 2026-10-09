@@ -1,0 +1,10 @@
+web:
+  port: 8080
+
+endpoints:
+  - name: React Production App
+    group: Production
+    url: "http://host.docker.internal/"
+    interval: 60s
+    conditions:
+      - "[STATUS] == 200"
