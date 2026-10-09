@@ -41,18 +41,16 @@ I created a `Dockerfile` using Nginx to serve the built React application. The i
 
 To build the image locally:
 
-```bash
++ bash
 docker build -t devops-build:latest .
-```
 
 To run the application:
 
-```bash
++ bash
 docker run -d \
   --name react-app \
   -p 80:80 \
   devops-build:latest
-```
 
 The project also includes a `docker-compose.yml` file to make it easier to build and run the application.
 
@@ -96,22 +94,6 @@ I configured Gatus to monitor the deployed application by checking its HTTP resp
 The health check expects an HTTP `200` response. If the application stops responding as expected, the dashboard can show the failed health check.
 
 This setup provides a simple way to monitor application availability. External email or messaging alerts are not currently configured.
-
-## Project Structure
-
-```text
-devops-build/
-├── Dockerfile
-├── docker-compose.yml
-├── build.sh
-├── deploy.sh
-├── .dockerignore
-├── .gitignore
-├── build/
-├── monitoring/
-│   └── config.yaml
-└── README.md
-```
 
 ## Screenshots
 
